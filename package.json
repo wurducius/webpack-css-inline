@@ -1,0 +1,10 @@
+{
+  "name": "webpack-css-inline",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Jakub Eliáš <wurducius@gmail.com>",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {}
+}
