@@ -12,6 +12,16 @@ const onInitCompilation = (compiler, options) => (compilation) => {
   );
 };
 
+const onRunStarted = (compiler, options) => (compilation) => {
+  compilation.hooks.run.tapPromise(
+    {
+      name: PLUGIN_NAME,
+      stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
+    },
+    async () => cssInline(compiler, compilation, options)
+  );
+};
+
 class CssInlineWebpackPlugin {
   options;
   constructor(options = {}) {
@@ -22,6 +32,7 @@ class CssInlineWebpackPlugin {
       PLUGIN_NAME,
       onInitCompilation(compiler, this.options)
     );
+    compiler.hooks.run.tap(PLUGIN_NAME, onRunStarted(compiler, this.options));
   }
 }
 
