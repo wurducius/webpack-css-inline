@@ -1,7 +1,7 @@
 {
   "name": "webpack-css-inline",
   "version": "1.0.1",
-  "description": "",
+  "description": "Webpack plugin for inlining CSS into HTML files",
   "license": "MIT",
   "author": "Jakub Eliáš <wurducius@gmail.com>",
   "type": "commonjs",
